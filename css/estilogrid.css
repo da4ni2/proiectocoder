@@ -1,0 +1,43 @@
+.caja{
+    background-color: blueviolet;
+    border: 2px solid black;
+    font-size: 2rem;
+
+}
+
+.caja-posicionada{
+background-color: aquamarine;
+/* grid-column: 1/5;
+grid-row: 1/3; */
+
+grid-column: span 2;
+grid-row: span 2;
+/* esto sirve para q se expanda 2  */
+
+grid-column: span 2;
+grid-row: 3/ span 2;
+/* esto tambien sirve para q se expanda 2 pero a partir de la linea 3 */
+
+}
+
+.contenedor{
+    background-color: rgb(18, 43, 65);
+    border: black 2px;
+    height: 98vh;
+    /* esto quiere decir el 98 % del alto de la pantalla */
+    display: grid;
+    /* declaracion de columnas y filas */
+    /* grid-template-columns: 200px 300px 500px ; */
+   
+    /* grid-template-columns: 200px repeat(10, 100px); */
+    /* primer valor de repeat es cuantas repeticiones quiero, el segundo el ancho */
+
+    grid-template-columns:1fr 1fr ;
+    /* trabajando con fracciones, a la primera col se le da
+    2 fracciones a la otra 1fr,del ancho del contenedor,
+    tambien puedo agregar al principio una columna mas con 200px
+    y el restante se divide en las fracciones */
+
+    /* grid-template-rows: 200px 100px 30px 300px; */
+}
+
