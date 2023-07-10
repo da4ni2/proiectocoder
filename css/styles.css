@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
 img {
     width: 100%;
     /* las imagenes al 100% de su contenedor */
@@ -15,10 +18,12 @@ body {
     padding: 1rem;
 }
 
-/* HEADER */
+/* ===== HEADER==== */
 header {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
     gap: 1rem;
     /* border-color: brown; */
     background-color: aquamarine;
@@ -118,8 +123,9 @@ article {
     background-color: rgb(240, 163, 205);
     border-color: rgba(219, 219, 107, 0.274);
     border-style: solid;
-    border-width: 10px;
+    /* border-width: 10px; */
     margin: 15px;
+    width: 250 px;
 }
 
 .titulo {
