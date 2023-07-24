@@ -1,47 +1,196 @@
 /* body */
-body {
-    padding: 1rem;
-}
+// body {
+//     // padding: 1rem;
+// }
 
 /* ===== HEADER==== */
 header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
+    align-items: center;
+    // gap: 1rem;
     /* border-color: brown; */
     background-color: aquamarine;
-    form {
-        display: none;
+
+    h1 {
+        color: rgb(114, 21, 21);
+        background-color: rgb(130, 211, 141);
+        /* color de letra y fondo */
+        text-align: center;
+        // padding: 10px;
+        margin: 10px;
+    }
+
+    // form{
+    //     // display: none;
+    // }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+
+
     }
 }
+/* main */
+main {
+    border-style: solid;
+    border-color: black;
+    background-color: green;
+}
 
-h1 {
-    color: rgb(114, 21, 21);
-    background-color: rgb(130, 211, 141);
-    /* color de letra y fondo */
+
+section h2 {
     text-align: center;
 }
 
-nav ul {
+.articulo {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px;
-
+    gap: 1rem;
 }
 
+article {
+
+    background-color: rgb(240, 163, 205);
+    border-color: rgba(219, 219, 107, 0.274);
+    border-style: solid;
+    /* border-width: 10px; */
+    margin: 15px;
+    width: 250 px;
+}
+
+.titulo {
+    color: rgb(176, 176, 197);
+}
+
+
+
+aside {
+    // display: flex;
+    background-color: rgba(206, 223, 113, 0.623);
+    width: auto;
+    /* min-width: 400px; */
+    padding: 1rem;
+    align-items: center;
+}
+
+/* footer */
+footer {
+    background-color: black;
+    color: beige;
+}
+// mediaqueries 768px ////
 @media(min-width:768px) {
 
     header {
         display: grid;
-        grid-template-columns: repeat(2 1fr);
-        /* grid-template-rows: 1fr 1fr;*/
+        grid-template-columns: repeat(3 1fr);
+        grid-template-rows: 1fr 1fr;
         gap: 0%;
-        
+        grid-template-areas: "titulo nada form"
+            "nav nav nav";
+
+        h1 {
+            text-align: center;
+            grid-area: titulo;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            background-color: rgb(130, 211, 141);
+            grid-area: form;
+        }
+
+        nav {
+            // grid-column: span 2;
+            grid-area: nav;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                justify-content: center;
+            }
+        }
+
     }
-    hr{
-        display:none ;
+
+    hr {
+        display: none;
+    }
+// MAIN /////
+    main {
+        .articulos{
+            // el error era q tenia q tener el padre la grilla
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 100px repeat(5, 1fr);
+        grid-template-areas:
+        "titulo titulo sidebar"
+            "principal principal sidebar "
+            "art1 art2 sidebar"
+            "art3 art4 sidebar"
+            "art5 art6 sidebar";
+
+        }
+        // para cuando son pocas celdas esta bueno trabajar con areas
+        section h2{
+            grid-area: titulo;
+        }
+
+    .principal{
+        // width: 350 px;
+        grid-area: principal;
+    }
+    .especies {
+        grid-area: sidebar;
+    }
+    .art1{
+        grid-area: art1;
+    }
+    .art2{
+        grid-area: art2;
+    }
+    .art3{
+        grid-area: art3;
+    }
+    .art4{
+        grid-area: art4;
+    }
+    .art5{
+        grid-area: art5;
+    }
+    .art6{
+        grid-area: art6;
     }
 }
+
+}
+
+// mediaqueries 1200px ///
+@media(min-width:1200px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    
+
+     form {
+        background-color: aquamarine;
+    }
+
+     h1 {
+        background-color: aquamarine;
+    }
+
+     nav ul {
+        text-decoration: none;
+    }
+    }
+}
+
